@@ -18,7 +18,7 @@ var player = videojs('videojs-shaka-player', {
 player.qualityPickerPlugin();
 player.src([{
   type: 'application/dash+xml',
-  src: 'https://bitmovin-a.akamaihd.net/content/MI201109210084_1/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd'
+  src: 'http://94.232.169.99/hls/123.m3u8'
   //src: 'https://storage.googleapis.com/shaka-demo-assets/angel-one/dash.mpd'
   //src: 'https://storage.googleapis.com/shaka-demo-assets/angel-one-hls/hls.m3u8'
   //src: 'https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8'
