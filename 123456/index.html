@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>پخش زنده</title>
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/css/video-js.css" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <style type="text/css">
+.my-video{
+	text-align:center;
+margin:0 auto;
+height:100%;
+width:100%;
+}
+        .video-js {
+            font-size: 1rem;
+	    height:100%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            height: 100%;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+
+        h2,
+        h3,
+        a {
+            color: #34495e;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        .logo {
+            margin: 0;
+            font-size: 1.45em;
+        }
+
+        .main-nav {
+            margin-top: 5px;
+
+        }
+
+        .logo a,
+        .main-nav a {
+            padding: 10px 15px;
+            text-transform: uppercase;
+            text-align: center;
+            display: block;
+        }
+
+        .main-nav a {
+            color: #34495e;
+            font-size: .99em;
+        }
+
+        .main-nav a:hover {
+            color: #718daa;
+        }
+
+
+        .header {
+            padding-top: .5em;
+            padding-bottom: .5em;
+            border: 1px solid #a2a2a2;
+            background-color: #f4f4f4;
+            -webkit-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+            box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
+
+        @media (min-width: 769px) {
+            .header,
+            .main-nav {
+                display: flex;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .header {
+                width: 80%;
+                margin: 0 auto;
+                max-width: 1150px;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .header {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+        }
+
+    </style>
+
+</head>
+<body class="bg-light">
+<div id="container" style="width:100%;margin: 0 auto;text-align: center;float: none;">
+        <video id="video" playsinline muted="true" class="video-js vjs-default-skin" style="width: 100%;text-align: center;" controls></video>
+</div>
+<script src="./assets/js/hls/video.js"></script>
+<script src="./assets/js/hls/hls.js"></script>
+<script src="./assets/js/hls/videojs5-hlsjs-source-handler.min.js?v=0.3.1"></script>
+<script src="./assets/js/hls/vjs-quality-picker.js?v=v0.0.2"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dashjs/4.3.0/dash.all.min.js"></script>
+<script>
+    if (!Hls.isSupported()) {
+        video=document.getElementById("video");
+        video.src = "https://live.mobinonline.ir/hls/123456.m3u8";
+    }else {
+        var player = videojs('video');
+        player.qualityPickerPlugin();
+        player.src({
+            src: 'https://live.mobinonline.ir/hls/123456.m3u8',
+            type: 'application/x-mpegURL'
+        });
+    }
+window.onload = (event) => {
+  document.getElementById('container').style.height=window.innerHeight+'px';
+};
+
+</script>
+</body>
+</html>
+
